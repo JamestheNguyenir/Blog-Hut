@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--replacing head with partial-->
+<%- include("/Users/jamesnguyen/Documents/node ninja/partials/head.ejs") %>
+<body>
+<!--replacing nav with partial-->
+    <%- include('/Users/jamesnguyen/Documents/node ninja/partials/nav.ejs') %>
+    
+    <div class = "blogs content">
+        <h2>Featured Blogs</h2>
+    
+        <% if(blogs.length > 0){ %>
+          <% blogs.forEach(blog =>{ %>
+            <a class = "single" href = "/blogs/<%= blog.id %>">
+            <h3 class = "title"><%= blog.title %></h3>
+            <p class = "snippet"><%= blog.snippet %></p>
+                <a></a>
+        <% }) %>
+
+        <% }else { %>
+            <p>There are NO BLOGS sorry ;-;</p> 
+        <% } %>
+
+    </div>
+    <%- include("/Users/jamesnguyen/Documents/node ninja/partials/footer.ejs") %>
+</body>
+</html>
